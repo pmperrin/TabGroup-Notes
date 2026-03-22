@@ -2,6 +2,9 @@
   "manifest_version": 3,
   "name": "TabGroup Notes",
   "version": "1.0",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  },
   "description": "Ajoute des post-it à vos groupes d'onglets pour un suivi rapide de vos tâches.",
   "permissions": [
     "tabGroups",

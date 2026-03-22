@@ -1,3 +1,6 @@
+// Basic HTML sanitization function to prevent XSS (defense in depth)
+const sanitizeInput = (str) => typeof str === 'string' ? str.replace(/<[^>]*>?/gm, '') : '';
+
 const colors = {
   grey: '#DADCE0',
   blue: '#8AB4F8',
@@ -50,7 +53,7 @@ async function renderGroups() {
   
   // Update toggle UI
   filterBtn.dataset.active = filterCurrentOnly.toString();
-  filterBtn.innerHTML = filterCurrentOnly ? '🎯 Focus Actif' : '👁️ Tous';
+  filterBtn.textContent = filterCurrentOnly ? '🎯 Focus Actif' : '👁️ Tous';
 
   let groups = await chrome.tabGroups.query({});
   
@@ -116,11 +119,18 @@ async function renderGroups() {
   const archiveSection = document.getElementById('archive-section');
   
   if (displayedGroups.length === 0) {
+    container.replaceChildren();
+    const msgDiv = document.createElement('div');
+    msgDiv.className = 'no-groups';
+    
     if (filterCurrentOnly && activeTabGroupId === -1) {
-       container.innerHTML = '<div class="no-groups">L\'onglet actuel n\'est dans aucun groupe.<br>Désactivez le focus (👁️ Tous) pour voir vos autres notes.</div>';
+       msgDiv.textContent = "L'onglet actuel n'est dans aucun groupe.\nDésactivez le focus (👁️ Tous) pour voir vos autres notes.";
     } else {
-       container.innerHTML = '<div class="no-groups">Aucun groupe d\'onglets actif.<br>Créez-en un dans Chrome pour ajouter des notes !</div>';
+       msgDiv.textContent = "Aucun groupe d'onglets actif.\nCréez-en un dans Chrome pour ajouter des notes !";
     }
+    msgDiv.style.whiteSpace = 'pre-line';
+    container.appendChild(msgDiv);
+    
     archiveSection.style.display = 'none';
     return;
   } else {
@@ -190,8 +200,9 @@ async function renderGroups() {
              group.title = newExpectedTitle;
           }
           
+          const safeVal = sanitizeInput(val);
           chrome.storage.local.set({ 
-            [storageKey]: { text: val, title: newExpectedTitle, color: group.color } 
+            [storageKey]: { text: safeVal, title: newExpectedTitle, color: group.color } 
           });
         }, 400);
       });
@@ -217,7 +228,7 @@ async function renderGroups() {
   // Hide archives dynamically if Focus Mode is ON
   if (filterCurrentOnly || validClosedNotes.length === 0) {
       archiveSection.style.display = 'none';
-      if (!filterCurrentOnly) archiveContainer.innerHTML = '';
+      if (!filterCurrentOnly) archiveContainer.replaceChildren();
   } else {
       archiveSection.style.display = 'block';
       
@@ -249,7 +260,7 @@ async function renderGroups() {
              actions.className = 'card-header-actions';
              const delBtn = document.createElement('button');
              delBtn.className = 'delete-btn';
-             delBtn.innerHTML = '🗑️';
+             delBtn.textContent = '🗑️';
              delBtn.title = 'Supprimer cette note définitivement';
              delBtn.onclick = () => {
                  chrome.storage.local.remove(cn.key);
@@ -267,7 +278,7 @@ async function renderGroups() {
              ta.dataset.archiveId = cn.id;
              
              ta.addEventListener('input', (e) => {
-                const val = e.target.value;
+                const val = sanitizeInput(e.target.value);
                 if (debounceTimers[cn.id]) clearTimeout(debounceTimers[cn.id]);
                 debounceTimers[cn.id] = setTimeout(() => {
                     chrome.storage.local.set({ [cn.key]: { text: val, title: titleStr, color: colorStr } });
