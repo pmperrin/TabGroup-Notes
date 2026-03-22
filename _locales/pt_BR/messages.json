@@ -1,0 +1,16 @@
+{
+  "extName": { "message": "TabGroup Notes" },
+  "extDesc": { "message": "Adicione notas aos seus grupos de guias para acompanhamento rápido de tarefas." },
+  "panelTitle": { "message": "Minhas Notas" },
+  "panelSubtitle": { "message": "Notas por grupo de guias" },
+  "filterAll": { "message": "👁️ Todas" },
+  "filterFocus": { "message": "🎯 Foco Ativo" },
+  "noGroupCurrent": { "message": "A guia atual não está em nenhum grupo.\nDesative o foco (👁️ Todas) para ver suas outras notas." },
+  "noGroupGeneral": { "message": "Nenhum grupo de guias ativo.\nCrie um no Chrome para adicionar notas!" },
+  "archiveTitle": { "message": "Arquivos" },
+  "archiveSubtitle": { "message": "Notas de grupos fechados" },
+  "deleteNote": { "message": "Excluir permanentemente esta nota" },
+  "placeholder": { "message": "Digite suas tarefas / notas aqui..." },
+  "unnamedGroup": { "message": "Grupo sem nome" },
+  "closedGroup": { "message": "Grupo fechado" }
+}

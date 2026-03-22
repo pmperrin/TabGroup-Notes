@@ -1,0 +1,16 @@
+{
+  "extName": { "message": "TabGroup Notes" },
+  "extDesc": { "message": "Добавляет заметки в группы вкладок для быстрого отслеживания задач." },
+  "panelTitle": { "message": "Мои заметки" },
+  "panelSubtitle": { "message": "Заметки по группам вкладок" },
+  "filterAll": { "message": "👁️ Все" },
+  "filterFocus": { "message": "🎯 Активный фокус" },
+  "noGroupCurrent": { "message": "Текущая вкладка не находится ни в одной группе.\nОтключите фокус (👁️ Все), чтобы увидеть другие заметки." },
+  "noGroupGeneral": { "message": "Нет активных групп вкладок.\nСоздайте группу в Chrome, чтобы добавить заметки!" },
+  "archiveTitle": { "message": "Архив" },
+  "archiveSubtitle": { "message": "Заметки из закрытых групп" },
+  "deleteNote": { "message": "Удалить эту заметку навсегда" },
+  "placeholder": { "message": "Введите свои задачи / заметки здесь..." },
+  "unnamedGroup": { "message": "Группа без названия" },
+  "closedGroup": { "message": "Закрытая группа" }
+}

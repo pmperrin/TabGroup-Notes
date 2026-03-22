@@ -1,0 +1,16 @@
+{
+  "extName": { "message": "TabGroup Notes" },
+  "extDesc": { "message": "タスクをすばやく追跡するために、タブグループにメモを追加します。" },
+  "panelTitle": { "message": "私のメモ" },
+  "panelSubtitle": { "message": "タブグループごとのメモ" },
+  "filterAll": { "message": "👁️ すべて" },
+  "filterFocus": { "message": "🎯 アクティブフォーカス" },
+  "noGroupCurrent": { "message": "現在のタブはどのグループにも属していません。\nフォーカスを解除（👁️ すべて）して他のメモを表示します。" },
+  "noGroupGeneral": { "message": "アクティブなタブグループはありません。\nChromeでグループを作成してメモを追加してください！" },
+  "archiveTitle": { "message": "アーカイブ" },
+  "archiveSubtitle": { "message": "閉じたグループのメモ" },
+  "deleteNote": { "message": "このメモを完全に削除" },
+  "placeholder": { "message": "ここにタスクやメモを入力してください..." },
+  "unnamedGroup": { "message": "名前のないグループ" },
+  "closedGroup": { "message": "閉じたグループ" }
+}

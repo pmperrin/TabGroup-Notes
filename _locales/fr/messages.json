@@ -1,0 +1,16 @@
+{
+  "extName": { "message": "TabGroup Notes" },
+  "extDesc": { "message": "Ajoute des post-it à vos groupes d'onglets pour un suivi rapide de vos tâches." },
+  "panelTitle": { "message": "Mes Post-its" },
+  "panelSubtitle": { "message": "Notes par groupe d'onglets" },
+  "filterAll": { "message": "👁️ Tous" },
+  "filterFocus": { "message": "🎯 Focus Actif" },
+  "noGroupCurrent": { "message": "L'onglet actuel n'est dans aucun groupe.\nDésactivez le focus (👁️ Tous) pour voir vos autres notes." },
+  "noGroupGeneral": { "message": "Aucun groupe d'onglets actif.\nCréez-en un dans Chrome pour ajouter des notes !" },
+  "archiveTitle": { "message": "Archives" },
+  "archiveSubtitle": { "message": "Notes de groupes fermés" },
+  "deleteNote": { "message": "Supprimer cette note définitivement" },
+  "placeholder": { "message": "Entrez vos tâches / post-its ici..." },
+  "unnamedGroup": { "message": "Groupe sans nom" },
+  "closedGroup": { "message": "Groupe fermé" }
+}

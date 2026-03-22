@@ -1,11 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "TabGroup Notes",
+  "name": "__MSG_extName__",
   "version": "1.0",
+  "default_locale": "fr",
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self';"
   },
-  "description": "Ajoute des post-it à vos groupes d'onglets pour un suivi rapide de vos tâches.",
+  "description": "__MSG_extDesc__",
   "permissions": [
     "tabGroups",
     "storage",
@@ -15,7 +16,7 @@
     "default_path": "panel.html"
   },
   "action": {
-    "default_title": "Ouvrir les post-it"
+    "default_title": "__MSG_extName__"
   },
   "background": {
     "service_worker": "background.js"

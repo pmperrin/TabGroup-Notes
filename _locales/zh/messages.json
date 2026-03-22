@@ -1,0 +1,16 @@
+{
+  "extName": { "message": "TabGroup Notes" },
+  "extDesc": { "message": "将便笺添加到标签组，以便快速跟踪任务。" },
+  "panelTitle": { "message": "我的便笺" },
+  "panelSubtitle": { "message": "按标签组分类的便笺" },
+  "filterAll": { "message": "👁️ 全部" },
+  "filterFocus": { "message": "🎯 当前活动" },
+  "noGroupCurrent": { "message": "当前标签页不在任何组中。\n禁用焦点模式（👁️ 全部）以查看您的其他便笺。" },
+  "noGroupGeneral": { "message": "没有活动标签组。\n在Chrome中创建一个以添加便笺！" },
+  "archiveTitle": { "message": "归档" },
+  "archiveSubtitle": { "message": "已关闭组的便笺" },
+  "deleteNote": { "message": "永久删除此便笺" },
+  "placeholder": { "message": "在此输入您的任务/便笺..." },
+  "unnamedGroup": { "message": "未命名组" },
+  "closedGroup": { "message": "已关闭的组" }
+}

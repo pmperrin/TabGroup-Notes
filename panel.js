@@ -13,6 +13,14 @@ const colors = {
   orange: '#FCAD70'
 };
 
+function localizeHtml() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const msg = chrome.i18n.getMessage(key);
+    if (msg) el.textContent = msg;
+  });
+}
+
 document.addEventListener('DOMContentLoaded', init);
 
 let renderTimeout;
@@ -24,6 +32,7 @@ function scheduleRender() {
 }
 
 async function init() {
+  localizeHtml();
   const settings = await chrome.storage.local.get(['filterCurrentOnly']);
   filterCurrentOnly = settings.filterCurrentOnly || false;
   
@@ -53,7 +62,7 @@ async function renderGroups() {
   
   // Update toggle UI
   filterBtn.dataset.active = filterCurrentOnly.toString();
-  filterBtn.textContent = filterCurrentOnly ? '🎯 Focus Actif' : '👁️ Tous';
+  filterBtn.textContent = filterCurrentOnly ? chrome.i18n.getMessage('filterFocus') : chrome.i18n.getMessage('filterAll');
 
   let groups = await chrome.tabGroups.query({});
   
@@ -124,9 +133,9 @@ async function renderGroups() {
     msgDiv.className = 'no-groups';
     
     if (filterCurrentOnly && activeTabGroupId === -1) {
-       msgDiv.textContent = "L'onglet actuel n'est dans aucun groupe.\nDésactivez le focus (👁️ Tous) pour voir vos autres notes.";
+       msgDiv.textContent = chrome.i18n.getMessage('noGroupCurrent');
     } else {
-       msgDiv.textContent = "Aucun groupe d'onglets actif.\nCréez-en un dans Chrome pour ajouter des notes !";
+       msgDiv.textContent = chrome.i18n.getMessage('noGroupGeneral');
     }
     msgDiv.style.whiteSpace = 'pre-line';
     container.appendChild(msgDiv);
@@ -182,7 +191,7 @@ async function renderGroups() {
       
       ta = document.createElement('textarea');
       ta.className = 'note-textarea';
-      ta.placeholder = 'Entrez vos tâches / post-its ici...';
+      ta.placeholder = chrome.i18n.getMessage('placeholder');
       ta.dataset.groupId = group.id;
       
       ta.addEventListener('input', (e) => {
@@ -211,7 +220,7 @@ async function renderGroups() {
       card.appendChild(ta);
     }
     
-    card.querySelector('.group-title').textContent = group.title || `Groupe sans nom (${group.color})`;
+    card.querySelector('.group-title').textContent = group.title || `${chrome.i18n.getMessage('unnamedGroup')} (${group.color})`;
     card.querySelector('.group-color-dot').style.backgroundColor = colors[group.color] || colors.grey;
     if (document.activeElement !== ta && noteText !== undefined) ta.value = noteText;
     container.appendChild(card);
@@ -240,7 +249,7 @@ async function renderGroups() {
       
       for (const cn of validClosedNotes) {
           const txt = typeof cn.data === 'string' ? cn.data : (cn.data?.text || '');
-          const titleStr = typeof cn.data === 'string' ? cn.data.substring(0,20)+'...' : (cn.data?.title || 'Groupe fermé');
+          const titleStr = typeof cn.data === 'string' ? cn.data.substring(0,20)+'...' : (cn.data?.title || chrome.i18n.getMessage('closedGroup'));
           const colorStr = typeof cn.data === 'string' ? 'grey' : (cn.data?.color || 'grey');
           
           let card = archiveContainer.querySelector(`textarea[data-archive-id="${cn.id}"]`)?.closest('.group-card');
@@ -261,7 +270,7 @@ async function renderGroups() {
              const delBtn = document.createElement('button');
              delBtn.className = 'delete-btn';
              delBtn.textContent = '🗑️';
-             delBtn.title = 'Supprimer cette note définitivement';
+             delBtn.title = chrome.i18n.getMessage('deleteNote');
              delBtn.onclick = () => {
                  chrome.storage.local.remove(cn.key);
                  card.remove();

@@ -1,0 +1,16 @@
+{
+  "extName": { "message": "TabGroup Notes" },
+  "extDesc": { "message": "Fügt Ihren Tab-Gruppen Notizen für eine schnelle Aufgabenverfolgung hinzu." },
+  "panelTitle": { "message": "Meine Notizen" },
+  "panelSubtitle": { "message": "Notizen nach Tab-Gruppe" },
+  "filterAll": { "message": "👁️ Alle" },
+  "filterFocus": { "message": "🎯 Aktiver Fokus" },
+  "noGroupCurrent": { "message": "Der aktuelle Tab ist in keiner Gruppe.\nDeaktivieren Sie den Fokus (👁️ Alle), um andere Notizen zu sehen." },
+  "noGroupGeneral": { "message": "Keine aktiven Tab-Gruppen.\nErstellen Sie eine in Chrome, um Notizen hinzuzufügen!" },
+  "archiveTitle": { "message": "Archiv" },
+  "archiveSubtitle": { "message": "Notizen von geschlossenen Gruppen" },
+  "deleteNote": { "message": "Diese Notiz dauerhaft löschen" },
+  "placeholder": { "message": "Geben Sie hier Ihre Aufgaben / Notizen ein..." },
+  "unnamedGroup": { "message": "Unbenannte Gruppe" },
+  "closedGroup": { "message": "Geschlossene Gruppe" }
+}
