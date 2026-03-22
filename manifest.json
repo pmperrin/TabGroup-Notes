@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Tab Group Post-its",
+  "name": "TabGroup Notes",
   "version": "1.0",
   "description": "Ajoute des post-it à vos groupes d'onglets pour un suivi rapide de vos tâches.",
   "permissions": [
