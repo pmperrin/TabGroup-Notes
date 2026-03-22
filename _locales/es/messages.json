@@ -1,16 +1,53 @@
 {
-  "extName": { "message": "TabGroup Notes" },
-  "extDesc": { "message": "Agrega notas a tus grupos de pestañas para un seguimiento rápido de tus tareas." },
-  "panelTitle": { "message": "Mis Notas" },
-  "panelSubtitle": { "message": "Notas por grupo de pestañas" },
-  "filterAll": { "message": "👁️ Todos" },
-  "filterFocus": { "message": "🎯 Foco Activo" },
-  "noGroupCurrent": { "message": "La pestaña actual no está en ningún grupo.\nDesactiva el foco (👁️ Todos) para ver tus otras notas." },
-  "noGroupGeneral": { "message": "No hay grupos de pestañas activos.\n¡Crea uno en Chrome para agregar notas!" },
-  "archiveTitle": { "message": "Archivos" },
-  "archiveSubtitle": { "message": "Notas de grupos cerrados" },
-  "deleteNote": { "message": "Eliminar esta nota permanentemente" },
-  "placeholder": { "message": "Introduce tus tareas / notas aquí..." },
-  "unnamedGroup": { "message": "Grupo sin nombre" },
-  "closedGroup": { "message": "Grupo cerrado" }
+  "extName": {
+    "message": "TabGroup Notes"
+  },
+  "extDesc": {
+    "message": "Agrega notas a tus grupos de pestañas para un seguimiento rápido de tus tareas."
+  },
+  "panelTitle": {
+    "message": "Mis Notas"
+  },
+  "panelSubtitle": {
+    "message": "Notas por grupo de pestañas"
+  },
+  "filterAll": {
+    "message": "👁️ Todos"
+  },
+  "filterFocus": {
+    "message": "🎯 Foco Activo"
+  },
+  "noGroupCurrent": {
+    "message": "La pestaña actual no está en ningún grupo.\nDesactiva el foco (👁️ Todos) para ver tus otras notas."
+  },
+  "noGroupGeneral": {
+    "message": "No hay grupos de pestañas activos.\n¡Crea uno en Chrome para agregar notas!"
+  },
+  "archiveTitle": {
+    "message": "Archivos"
+  },
+  "archiveSubtitle": {
+    "message": "Notas de grupos cerrados"
+  },
+  "deleteNote": {
+    "message": "Eliminar esta nota permanentemente"
+  },
+  "placeholder": {
+    "message": "Introduce tus tareas / notas aquí..."
+  },
+  "unnamedGroup": {
+    "message": "Grupo sin nombre"
+  },
+  "closedGroup": {
+    "message": "Grupo cerrado"
+  },
+  "toolbarBold": {
+    "message": "Bold"
+  },
+  "toolbarItalic": {
+    "message": "Italic"
+  },
+  "toolbarChecklist": {
+    "message": "Checklist"
+  }
 }

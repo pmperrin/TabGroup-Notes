@@ -31,6 +31,18 @@
     </div>
   </div>
 
+  <div id="alarm-modal" style="display: none;" class="modal-overlay">
+    <div class="modal">
+      <h3 data-i18n="alarmTitle">Définir un rappel</h3>
+      <input type="datetime-local" id="alarm-datetime" />
+      <div class="modal-actions">
+        <button id="cancel-alarm" data-i18n="cancel">Annuler</button>
+        <button id="clear-alarm" data-i18n="clear" style="color: red;">Effacer l'alarme</button>
+        <button id="save-alarm" data-i18n="save">Sauvegarder</button>
+      </div>
+    </div>
+  </div>
+
   <script src="panel.js"></script>
 </body>
 </html>

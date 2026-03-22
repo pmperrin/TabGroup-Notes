@@ -10,7 +10,9 @@
   "permissions": [
     "tabGroups",
     "storage",
-    "sidePanel"
+    "sidePanel",
+    "alarms",
+    "notifications"
   ],
   "side_panel": {
     "default_path": "panel.html"

@@ -1,16 +1,53 @@
 {
-  "extName": { "message": "TabGroup Notes" },
-  "extDesc": { "message": "Adds post-its to your tab groups for quick task tracking." },
-  "panelTitle": { "message": "My Post-its" },
-  "panelSubtitle": { "message": "Notes by tab group" },
-  "filterAll": { "message": "👁️ All" },
-  "filterFocus": { "message": "🎯 Active Focus" },
-  "noGroupCurrent": { "message": "Current tab is not in any group.\nDisable focus (👁️ All) to see your other notes." },
-  "noGroupGeneral": { "message": "No active tab groups.\nCreate one in Chrome to add notes!" },
-  "archiveTitle": { "message": "Archives" },
-  "archiveSubtitle": { "message": "Notes from closed groups" },
-  "deleteNote": { "message": "Permanently delete this note" },
-  "placeholder": { "message": "Enter your tasks / post-its here..." },
-  "unnamedGroup": { "message": "Unnamed group" },
-  "closedGroup": { "message": "Closed group" }
+  "extName": {
+    "message": "TabGroup Notes"
+  },
+  "extDesc": {
+    "message": "Adds post-its to your tab groups for quick task tracking."
+  },
+  "panelTitle": {
+    "message": "My Post-its"
+  },
+  "panelSubtitle": {
+    "message": "Notes by tab group"
+  },
+  "filterAll": {
+    "message": "👁️ All"
+  },
+  "filterFocus": {
+    "message": "🎯 Active Focus"
+  },
+  "noGroupCurrent": {
+    "message": "Current tab is not in any group.\nDisable focus (👁️ All) to see your other notes."
+  },
+  "noGroupGeneral": {
+    "message": "No active tab groups.\nCreate one in Chrome to add notes!"
+  },
+  "archiveTitle": {
+    "message": "Archives"
+  },
+  "archiveSubtitle": {
+    "message": "Notes from closed groups"
+  },
+  "deleteNote": {
+    "message": "Permanently delete this note"
+  },
+  "placeholder": {
+    "message": "Enter your tasks / post-its here..."
+  },
+  "unnamedGroup": {
+    "message": "Unnamed group"
+  },
+  "closedGroup": {
+    "message": "Closed group"
+  },
+  "toolbarBold": {
+    "message": "Bold"
+  },
+  "toolbarItalic": {
+    "message": "Italic"
+  },
+  "toolbarChecklist": {
+    "message": "Checklist"
+  }
 }
