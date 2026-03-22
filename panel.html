@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab Group Post-its</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <div class="header-container">
+    <div class="header">
+      <h1>Mes Post-its</h1>
+      <p class="subtitle">Notes par groupe d'onglets</p>
+    </div>
+    <button id="filter-btn" class="toggle-btn" data-active="false" title="Basculer le mode focus">
+      👁️ Tous
+    </button>
+  </div>
+  
+  <div id="groups-container">
+    <!-- Active groups dynamically injected -->
+  </div>
+
+  <div id="archive-section" style="display: none; margin-top: 32px;">
+    <div class="header-archive">
+      <h2>Archives</h2>
+      <p class="subtitle">Notes de groupes fermés</p>
+    </div>
+    <div id="archived-container">
+      <!-- Archived groups dynamically injected -->
+    </div>
+  </div>
+
+  <script src="panel.js"></script>
+</body>
+</html>

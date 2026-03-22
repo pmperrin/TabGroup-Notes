@@ -1,0 +1,269 @@
+:root {
+  /* Ultra-modern 2026 Aesthetic - Soft, Glassmorphic, Clean */
+  --bg-top: #f8fafc;
+  --bg-bottom: #e2e8f0;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --card-bg: rgba(255, 255, 255, 0.65);
+  --card-border: rgba(255, 255, 255, 1);
+  --card-shadow: 0 8px 32px rgba(15, 23, 42, 0.05);
+  --card-hover: 0 12px 36px rgba(15, 23, 42, 0.08);
+
+  --textarea-bg: rgba(255, 255, 255, 0.45);
+  --textarea-hover: rgba(255, 255, 255, 0.8);
+  --textarea-focus: #ffffff;
+
+  --focus-ring: rgba(56, 189, 248, 0.4);
+  --focus-border: #38bdf8;
+
+  --radius-xl: 16px;
+  --radius-lg: 12px;
+  --transition: 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-top: #0f172a;
+    --bg-bottom: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+
+    --card-bg: rgba(30, 41, 59, 0.5);
+    --card-border: rgba(255, 255, 255, 0.06);
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --card-hover: 0 12px 36px rgba(0, 0, 0, 0.6);
+
+    --textarea-bg: rgba(15, 23, 42, 0.4);
+    --textarea-hover: rgba(15, 23, 42, 0.7);
+    --textarea-focus: rgba(30, 41, 59, 0.9);
+
+    --focus-ring: rgba(56, 189, 248, 0.2);
+    --focus-border: #38bdf8;
+  }
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(145deg, var(--bg-top), var(--bg-bottom));
+  background-attachment: fixed;
+  color: var(--text-main);
+  margin: 0;
+  padding: clamp(16px, 4vw, 24px);
+  min-height: 100vh;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.header {
+  text-align: left;
+}
+
+.header h1 {
+  font-size: clamp(1.4rem, 5vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 6px 0;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header .subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Toggle Switch Button */
+.toggle-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.toggle-btn:hover {
+  background: var(--textarea-hover);
+  color: var(--text-main);
+  transform: translateY(-1px);
+}
+
+.toggle-btn[data-active="true"] {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #0284c7;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  .toggle-btn[data-active="true"] {
+    background: rgba(56, 189, 248, 0.2);
+    border-color: rgba(56, 189, 248, 0.5);
+    color: #7dd3fc;
+  }
+}
+
+/* Archives Header Override */
+.header-archive h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0 0 4px 0;
+  background: none;
+  -webkit-text-fill-color: var(--text-muted);
+}
+
+.header-archive .subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0 0 12px 0;
+}
+
+#groups-container,
+#archived-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.group-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-xl);
+  padding: 16px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.group-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-hover);
+}
+
+/* Color Dot & Header */
+.group-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 4px;
+}
+
+.group-color-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.group-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.01em;
+}
+
+/* Textarea Premium Input */
+.note-textarea {
+  width: 100%;
+  min-height: 110px;
+  background: var(--textarea-bg);
+  color: var(--text-main);
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: all var(--transition);
+}
+
+.note-textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.note-textarea:hover {
+  background: var(--textarea-hover);
+}
+
+.note-textarea:focus {
+  outline: none;
+  background: var(--textarea-focus);
+  border-color: var(--focus-border);
+  box-shadow: 0 0 0 4px var(--focus-ring);
+}
+
+/* Delete Button */
+.card-header-actions {
+  margin-left: auto;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  opacity: 0.6;
+}
+
+.delete-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
+}
+
+/* Empty States */
+.no-groups {
+  text-align: center;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 40px 20px;
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  border: 2px dashed rgba(100, 116, 139, 0.2);
+  line-height: 1.6;
+  backdrop-filter: blur(8px);
+}
